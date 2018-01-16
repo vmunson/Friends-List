@@ -3,9 +3,13 @@ $(document).ready(function(){
         e.preventDefault()
         let newFriend = $('#input').val()
         let newElement = createFriend(newFriend)
-        $('#friend-list').append(newFriend)
+        $('#friend-list').append(newElement)
         $('#input').val(' ')
     })
+})
+
+$('#friend-list').on("click", 'li', function(e){
+    $(this).remove()
 })
 
 function createFriend(name){
